@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Codin-Digital — eine interaktive digitale Erfahrung.">
+  <title>Codin-Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="services.js" defer></script>
+  <script src="ambient-flow.js" defer></script>
+  <script src="pixel-journey.js" defer></script>
+  <script src="portfolio-pixel-marks.js" defer></script>
+  <script src="pixel-route.js" defer></script>
+  <script src="portfolio-reveal.js" defer></script>
+  <script src="navigation-contact.js" defer></script>
+  <script src="language.js" defer></script>
+</head>
+<body>
+  <a class="pixel-logo" href="#start" aria-label="Codin Digital — zurück zum Anfang"></a>
+  <nav class="site-navigation" aria-label="Hauptnavigation">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation-links"><span class="nav-toggle-label">Menü</span><span aria-hidden="true">☰</span></button>
+    <div class="nav-links" id="navigation-links">
+      <a href="#start">Start</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+    <div class="language-switch" role="group" aria-label="Sprache auswählen">
+      <span class="language-indicator" aria-hidden="true"></span>
+      <button type="button" data-language="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button>
+      <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+    </div>
+  </nav>
+  <a class="contact-button" href="#contact">Get in contact <span aria-hidden="true">↗</span></a>
+  <canvas class="pixel-journey" aria-hidden="true"></canvas>
+  <canvas class="pixel-route" aria-hidden="true"></canvas>
+  <main id="start" class="scroll-scene">
+  <section class="hero" aria-label="Codin-Digital">
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <h1 aria-label="Codin-Digital"><span id="word" aria-hidden="true"></span><span class="cursor" aria-hidden="true">_</span></h1>
+    <div class="ambient-light" aria-hidden="true"></div>
+    <div class="interface">
+      <button class="scroll-cue" type="button" aria-label="Nach unten scrollen">
+        <span class="mouse-shape" aria-hidden="true"><span class="mouse-wheel"></span></span>
+        <span class="scroll-chevron" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+  </main>
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="services-stage">
+      <div class="services-atmosphere" aria-hidden="true"><canvas class="fluid-background"></canvas></div>
+      <header class="services-heading" id="webdesign">
+        <h2 id="services-title">Webdesign.<br><span>Mit Charakter.</span></h2>
+        <p class="services-intro">Du hast etwas zu zeigen.<br>Geben wir ihm den richtigen Auftritt.</p>
+        <p class="services-description">Von der ersten Idee bis zur fertigen Website: durchdachtes Design, klare Inhalte und eine Entwicklung, die auf jedem Bildschirm funktioniert.</p>
+        <div class="services-actions">
+          <a class="services-primary" href="#contact" data-contact-service="Webdesign">Deine Website besprechen <span aria-hidden="true">↗</span></a>
+          <a class="services-secondary" href="#portfolio">Arbeiten entdecken <span aria-hidden="true">↓</span></a>
+        </div>
+      </header>
+      <div class="services-showcase">
+        <div class="preview-toolbar">
+          <div class="preview-switch" role="group" aria-label="Website-Vorschau auswählen">
+            <button type="button" data-preview-mode="desktop" aria-pressed="true" aria-controls="design-preview">Desktop</button>
+            <button type="button" data-preview-mode="mobile" aria-pressed="false" aria-controls="design-preview">Mobile</button>
+          </div>
+        </div>
+        <div class="service-slot service-slot-main">
+          <div class="service-tile">
+            <div class="service-pixel-icon service-pixel-icon-main" aria-hidden="true"></div>
+            <div class="tile-content">
+              <div class="design-browser" id="design-preview" data-mode="desktop" role="img" aria-label="Illustrative Website-Vorschau im Desktop-Format">
+                <div class="design-chrome" aria-hidden="true"><span><i></i><i></i><i></i></span><span>Deine Idee. Dein Auftritt.</span></div>
+                <div class="studio-page" aria-hidden="true">
+                  <div class="studio-nav"><strong>atelier<span>®</span></strong><span>Spaces with a point of view <b>↗</b></span></div>
+                  <div class="studio-body">
+                    <div class="studio-copy"><span>ARCHITECTURE & LIVING</span><strong>Room for<br><em>new ideas.</em></strong><span class="studio-cta">Explore spaces <b>↗</b></span></div>
+                    <div class="studio-visual"><img src="assets/services-space.webp" alt="" width="1122" height="1402" loading="lazy"><span>01 / A different perspective</span></div>
+                  </div>
+                  <div class="studio-footer"><span>Thoughtfully designed. Naturally different.</span><span>Discover the collection ↗</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="portfolio-section" id="portfolio" aria-labelledby="portfolio-title">
+    <header class="portfolio-heading">
+      <div><h2 id="portfolio-title">Portfolio<span>.</span></h2></div>
+    </header>
+    <div class="portfolio-grid">
+      <article class="portfolio-project portfolio-project-runa">
+        <a class="project-preview project-preview-runa" href="https://runa-advisors.com/" target="_blank" rel="noopener noreferrer" aria-label="Runa Advisors – Website in neuem Tab öffnen">
+          <span class="project-index" aria-hidden="true">01</span>
+          <span class="portfolio-pixel-logo" data-pixel-mark="runa" aria-hidden="true"><img src="assets/portfolio/runa-logo.png" alt=""></span>
+          <div class="project-browser project-browser-runa" aria-hidden="true">
+            <div class="project-browser-chrome"><span class="browser-dots"><i></i><i></i><i></i></span><span>runa-advisors.com</span><span>↗</span></div>
+            <div class="project-runa-page">
+              <img class="project-runa-logo" src="assets/portfolio/runa-logo.png" alt="" loading="lazy" width="568" height="178">
+              <div class="project-runa-copy"><h3>From Operating Business<br>to a Diversified Portfolio.</h3><p>Independent advice for entrepreneurial families.</p><span>Contact →</span></div>
+            </div>
+          </div>
+          <span class="project-open">Website entdecken <span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="project-caption"><div><h3><a href="https://runa-advisors.com/" target="_blank" rel="noopener noreferrer">Runa Advisors <span aria-hidden="true">↗</span></a></h3></div></div>
+      </article>
+      <article class="portfolio-project portfolio-project-thugatra">
+        <a class="project-preview project-preview-thugatra" href="https://thugatra.com/" target="_blank" rel="noopener noreferrer" aria-label="Thugatra – Website in neuem Tab öffnen">
+          <span class="project-index" aria-hidden="true">02</span>
+          <span class="portfolio-pixel-logo" data-pixel-mark="thugatra" aria-hidden="true"><img src="assets/portfolio/thugatra-logo.webp" alt=""></span>
+          <div class="project-browser project-browser-thugatra" aria-hidden="true">
+            <div class="project-browser-chrome"><span class="browser-dots"><i></i><i></i><i></i></span><span>thugatra.com</span><span>↗</span></div>
+            <div class="project-thugatra-page">
+              <svg class="project-thugatra-waves" viewBox="0 0 800 520" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M-60 250 Q130 110 300 230 T610 210 T900 260"/><path d="M-60 300 Q160 200 350 285 T680 265 T900 320"/><path d="M-30 350 Q160 275 340 345 T660 320 T900 370"/></svg>
+              <img src="assets/portfolio/thugatra-logo.webp" alt="" loading="lazy" width="1600" height="384">
+              <p>Unabhängige Beratung<br>für Unternehmerfamilien</p>
+            </div>
+          </div>
+          <span class="project-open">Website entdecken <span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="project-caption"><div><h3><a href="https://thugatra.com/" target="_blank" rel="noopener noreferrer">Thugatra <span aria-hidden="true">↗</span></a></h3></div></div>
+      </article>
+      <article class="portfolio-project portfolio-project-next">
+        <a class="project-preview project-preview-next" href="#contact" aria-label="You could be next – dein Projekt besprechen">
+          <span class="project-index" aria-hidden="true">03</span>
+          <span class="portfolio-pixel-logo" data-pixel-mark="next" aria-hidden="true"><span class="portfolio-question-mark">?</span></span>
+          <div class="project-browser project-browser-next" aria-hidden="true">
+            <div class="project-browser-chrome"><span class="browser-dots"><i></i><i></i><i></i></span><span>Deine nächste Website</span><span>↗</span></div>
+            <div class="project-next-page"><span class="project-next-plus">+</span><strong>You could<br>be next.</strong><p>Platz für deine Idee.</p></div>
+          </div>
+          <span class="project-open">Projekt starten <span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="project-caption"><div><h3><a href="#contact">Deine Website <span aria-hidden="true">↗</span></a></h3></div></div>
+      </article>
+    </div>
+
+  </section>
+  <section class="timeline-section" id="ablauf" aria-labelledby="timeline-title">
+    <header class="timeline-heading"><h2 id="timeline-title">Von der Idee<br>bis zum <span>Launch.</span></h2></header>
+    <div class="timeline-layout"><span class="timeline-rail" aria-hidden="true"></span>
+    <ol class="timeline-track">
+      <li class="timeline-step"><span class="timeline-node" aria-hidden="true">01</span><div class="timeline-card"><img class="timeline-image" src="assets/timeline/discovery.webp" alt="Symbolbild: Arbeitsplatz mit Laptop und Notizen für ein erstes Gespräch" width="1536" height="1024" loading="lazy"><div class="timeline-card-copy"><h3>Kickoff & Discovery</h3><p>Wir lernen uns kennen und klären, was deine Website zeigen und erreichen soll.</p></div></div></li>
+      <li class="timeline-step"><span class="timeline-node" aria-hidden="true">02</span><div class="timeline-card"><img class="timeline-image" src="assets/timeline/draft.webp" alt="Symbolbild: Skizzenbuch mit ersten Layout-Ideen und Materialmustern" width="1536" height="1024" loading="lazy"><div class="timeline-card-copy"><h3>First Draft</h3><p>Du bekommst einen ersten Entwurf, der deine Idee in Form, Farbe und Struktur übersetzt.</p></div></div></li>
+      <li class="timeline-step"><span class="timeline-node" aria-hidden="true">03</span><div class="timeline-card"><img class="timeline-image" src="assets/timeline/feedback.webp" alt="Symbolbild: Gemeinsame Besprechung von Website-Entwürfen" width="1536" height="1024" loading="lazy"><div class="timeline-card-copy"><h3>2–3 Review Sessions</h3><p>Wir gehen die Website gemeinsam durch und verfeinern Design, Inhalte und Details.</p></div></div></li>
+      <li class="timeline-step"><span class="timeline-node" aria-hidden="true">04</span><div class="timeline-card"><img class="timeline-image" src="assets/timeline/launch.webp" alt="Symbolbild: Fertiger Website-Auftritt auf Monitor und Laptop" width="1536" height="1024" loading="lazy"><div class="timeline-card-copy"><h3>Go-Live & Hosting</h3><p>Wir prüfen den fertigen Auftritt, richten das Hosting ein und bringen deine Website online.</p></div></div></li>
+    </ol></div>
+  </section>
+
+    <section class="about-section" id="ueber-mich" aria-labelledby="about-title">
+      <div class="about-profile">
+        <h2 id="about-title"><span>Hi, ich bin</span><em>Constantin<span class="about-name-dot">.</span></em></h2>
+        <figure class="about-portrait">
+          <img src="assets/constantin-portrait.webp" alt="Porträt von Constantin, dem Kopf hinter Codin-Digital" width="1122" height="1402" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <div class="about-expertise" aria-labelledby="expertise-title">
+        <h3 id="expertise-title">Meine Expertise<span>.</span></h3>
+        <ol class="expertise-list">
+          <li><span class="expertise-number" aria-hidden="true">01</span><div><h4>Webdesign</h4><p>Auftritte mit Charakter gestalten.</p></div></li>
+          <li><span class="expertise-number" aria-hidden="true">02</span><div><h4>AI Automation Engineering</h4><p>Abläufe intelligent verbinden.</p></div></li>
+          <li><span class="expertise-number" aria-hidden="true">03</span><div><h4>Forward Deployment Engineering</h4><p>Ideen in funktionierende Lösungen übersetzen.</p></div></li>
+        </ol>
+        <div class="about-links">
+          <a class="about-contact-link" href="#contact">Lernen wir uns kennen <span aria-hidden="true">↗</span></a>
+          <a class="about-linkedin" href="https://at.linkedin.com/in/constantin-dieringer" target="_blank" rel="noopener noreferrer" aria-label="Constantin Dieringer auf LinkedIn – öffnet in einem neuen Tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3.3 9h3.4v12H3.3V9Zm6.1 0h3.3v1.6c.7-1.2 1.8-1.9 3.5-1.9 3.4 0 4.5 2.1 4.5 5.2V21h-3.5v-6.3c0-1.6-.3-2.9-2.1-2.9-1.9 0-2.3 1.5-2.3 3V21H9.4V9Z"/></svg>LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+  <section class="contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="contact-intro">
+      <h2 id="contact-title">Get in<br>contact<span>.</span></h2>
+      <p class="contact-description">Eine neue Website oder ein frischer Blick auf deinen bestehenden Auftritt? Erzähl mir, was du vorhast.</p>
+    </div>
+    <form class="contact-form" data-recipient="" aria-label="Projektanfrage">
+      <div class="contact-field-row">
+        <label>Vorname<input name="firstName" autocomplete="given-name" placeholder="Dein Vorname" required maxlength="60"></label>
+        <label>Nachname<input name="lastName" autocomplete="family-name" placeholder="Dein Nachname" required maxlength="60"></label>
+      </div>
+      <label>Deine E-Mail<input type="email" name="email" autocomplete="email" placeholder="du@unternehmen.de" required maxlength="254"></label>
+      <label>Deine Idee<textarea name="message" rows="5" placeholder="Was möchtest du verändern oder aufbauen?" required maxlength="5000"></textarea></label>
+      <button class="contact-submit" type="submit" disabled>E-Mail vorbereiten <span aria-hidden="true">↗</span></button>
+      <p class="contact-form-status" role="status">Das Kontaktformular wird in Kürze freigeschaltet.</p>
+    </form>
+  </section>
+</body>
+</html>
