@@ -138,7 +138,7 @@ h2 { max-width: 850px; margin: 20px 0; font: 400 clamp(48px, 8vw, 110px)/1.15 'C
 .service-pixel-icon-main { --icon-size: 32px; }
 .pixel-journey-ready .service-pixel-icon { opacity: 0; }
 .pixel-journey-done .service-pixel-icon { opacity: 1; }
-.contact-button { position: fixed; z-index: 13; top: 16px; right: 36px; display: flex; align-items: center; justify-content: center; gap: 14px; width: 184px; height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: #17171b; color: #fff; font: 600 14px/1 -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; box-shadow: none; text-decoration: none; cursor: pointer; opacity: 0; visibility: hidden; pointer-events: none; transition: background-color .2s ease; }
+.contact-button { position: fixed; z-index: 13; top: 16px; right: 36px; display: flex; align-items: center; justify-content: center; gap: 14px; width: 184px; height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: #17171b; color: #fff; font: 600 14px/1 -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; box-shadow: none; text-decoration: none; cursor: pointer; opacity: 1; visibility: visible; pointer-events: auto; transition: background-color .2s ease; }
 .pixel-journey-ready .contact-button { visibility: visible; }
 .pixel-journey-done .contact-button { opacity: 1; pointer-events: auto; }
 .contact-button:hover { background: var(--pixel-color); }

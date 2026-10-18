@@ -93,7 +93,7 @@
     cancelAnimationFrame(frameId); frameId = 0;
     mode = 'waiting'; points = [];
     document.body.classList.remove('pixel-journey-done');
-    contact.setAttribute('aria-hidden', 'true'); contact.tabIndex = -1;
+    contact.removeAttribute('aria-hidden'); contact.removeAttribute('tabindex');
     contact.style.removeProperty('opacity');
     ctx.clearRect(0, 0, innerWidth, innerHeight);
   }
@@ -143,7 +143,6 @@
       ctx.restore();
     });
     ctx.globalAlpha = 1;
-    contact.style.opacity = ease(progress, .87, 1);
     if (progress >= 1) finish(); else frameId = requestAnimationFrame(paint);
   }
   function onScroll() {
@@ -154,7 +153,7 @@
   let hoverTimer = 0;
   const sparks = new Set();
   function canHover(target) {
-    return target === contact ? mode === 'done' : target.classList.contains('docked');
+    return target === contact || target.classList.contains('docked');
   }
   function emitPixels(count = 3, target = contact) {
     if (reduced || !canHover(target) || document.hidden) return;
