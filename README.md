@@ -16,7 +16,7 @@ Portfolio-Website für Codin-Digital: Webdesign, AI Automation Engineering und F
 
 ## Kontaktformular
 
-Das Kontaktformular ist vorbereitet, aber noch nicht zum Versenden freigeschaltet. In `index.html` ist `data-recipient` bewusst leer. Sobald dort eine Kontaktadresse hinterlegt wird, kann das Formular eine E-Mail im lokalen E-Mail-Programm vorbereiten. Es gibt keinen Backend-Versand.
+Anfragen werden über [Web3Forms](https://web3forms.com) direkt per E-Mail zugestellt. Der Access Key steht in `index.html` im Attribut `data-access-key` des Formulars; er ist öffentlich unbedenklich, weil Web3Forms nur an die Adresse sendet, für die er ausgestellt wurde. Ist das Attribut leer, bleibt das Formular deaktiviert.
 
 ## Assets
 

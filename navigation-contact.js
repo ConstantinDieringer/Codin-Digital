@@ -51,17 +51,50 @@
   if (!form) return;
   const submit = form.querySelector('.contact-submit');
   const status = form.querySelector('.contact-form-status');
-  const recipient = form.dataset.recipient.trim();
-  if (recipient) {
-    submit.disabled = false;
-    status.textContent = 'Öffnet deine Anfrage in deinem E-Mail-Programm.';
-  }
-  form.addEventListener('submit', event => {
+  // Web3Forms access keys are public by design; they only allow sending to the address they were issued for.
+  const accessKey = form.dataset.accessKey.trim();
+  const messages = {
+    unavailable: ['Das Kontaktformular wird in Kürze freigeschaltet.', 'The contact form will be available soon.'],
+    ready: ['Deine Anfrage geht direkt an mich. Ich melde mich zeitnah.', 'Your enquiry comes straight to me. I’ll get back to you soon.'],
+    sending: ['Wird gesendet …', 'Sending …'],
+    sent: ['Danke! Deine Anfrage ist angekommen.', 'Thank you! Your enquiry has arrived.'],
+    failed: ['Senden hat nicht geklappt. Bitte versuch es noch einmal.', 'Sending failed. Please try again.']
+  };
+  let state = accessKey ? 'ready' : 'unavailable';
+  const renderStatus = () => { status.textContent = messages[state][isEnglish() ? 1 : 0]; };
+  document.addEventListener('codin:language-change', renderStatus);
+  submit.disabled = !accessKey;
+  renderStatus();
+  form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (!recipient || !form.reportValidity()) return;
+    if (!accessKey || submit.disabled || !form.reportValidity()) return;
     const data = new FormData(form);
-    const subject = isEnglish() ? 'Project enquiry – Web design' : 'Projektanfrage – Webdesign';
-    const body = `${isEnglish() ? 'First name' : 'Vorname'}: ${data.get('firstName')}\n${isEnglish() ? 'Last name' : 'Nachname'}: ${data.get('lastName')}\n${isEnglish() ? 'Email' : 'E-Mail'}: ${data.get('email')}\n\n${data.get('message')}`;
-    window.location.href = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (data.get('botcheck')) return;
+    const name = `${data.get('firstName')} ${data.get('lastName')}`.trim();
+    submit.disabled = true;
+    state = 'sending';
+    renderStatus();
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Projektanfrage von ${name}`,
+          from_name: 'Codin-Digital Website',
+          name,
+          email: data.get('email'),
+          message: data.get('message')
+        })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.success) throw new Error(result.message || response.statusText);
+      form.reset();
+      state = 'sent';
+    } catch {
+      state = 'failed';
+    }
+    submit.disabled = false;
+    renderStatus();
   });
 })();

@@ -202,6 +202,7 @@ html { scroll-behavior: smooth; }
 .contact-submit { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border: 0; border-radius: 999px; background: #17171b; color: #fff; font-size: 14px; line-height: 1.2; font-weight: 600; font-family: inherit; cursor: pointer; }
 .contact-submit:hover:not(:disabled) { background: var(--pixel-color); }
 .contact-submit:disabled { opacity: .45; cursor: not-allowed; }
+.contact-honeypot { display: none; }
 .contact-form-status { margin: -8px 0 0; color: #8c8393; font-size: 11px; line-height: 1.5; }
 @media (max-width: 900px) {
   .site-navigation { top: 12px; left: 82px; transform: none; border-radius: 999px; }

@@ -178,14 +178,15 @@
       <h2 id="contact-title">Get in<br>contact<span>.</span></h2>
       <p class="contact-description">Eine neue Website oder ein frischer Blick auf deinen bestehenden Auftritt? Erzähl mir, was du vorhast.</p>
     </div>
-    <form class="contact-form" data-recipient="constantin.dieringer@gmail.com" aria-label="Projektanfrage">
+    <form class="contact-form" data-access-key="8d455299-3059-4aa9-a0c1-663acd5df4c4" aria-label="Projektanfrage">
       <div class="contact-field-row">
         <label>Vorname<input name="firstName" autocomplete="given-name" placeholder="Dein Vorname" required maxlength="60"></label>
         <label>Nachname<input name="lastName" autocomplete="family-name" placeholder="Dein Nachname" required maxlength="60"></label>
       </div>
       <label>Deine E-Mail<input type="email" name="email" autocomplete="email" placeholder="du@unternehmen.de" required maxlength="254"></label>
       <label>Deine Idee<textarea name="message" rows="5" placeholder="Was möchtest du verändern oder aufbauen?" required maxlength="5000"></textarea></label>
-      <button class="contact-submit" type="submit" disabled>E-Mail vorbereiten <span aria-hidden="true">↗</span></button>
+      <input type="checkbox" name="botcheck" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="contact-submit" type="submit" disabled>Anfrage senden <span aria-hidden="true">↗</span></button>
       <p class="contact-form-status" role="status">Das Kontaktformular wird in Kürze freigeschaltet.</p>
     </form>
   </section>
