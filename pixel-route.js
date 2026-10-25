@@ -15,7 +15,7 @@
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const ink = getComputedStyle(document.documentElement).getPropertyValue('--pixel-color').trim();
+  const ink = getComputedStyle(document.documentElement).getPropertyValue('--pixel-color').trim() || '#943ae4';
   const clamp = value => Math.max(0, Math.min(1, value));
   const progress = (value, start, end) => clamp((value - start) / Math.max(1, end - start));
   const mix = (a, b, t) => a + (b - a) * t;

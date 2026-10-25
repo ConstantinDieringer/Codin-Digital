@@ -12,7 +12,7 @@
   const ambient = document.querySelector('.ambient-light');
   const cursor = document.querySelector('.cursor');
   const scrollCue = document.querySelector('.scroll-cue');
-  const pixelColor = getComputedStyle(document.documentElement).getPropertyValue('--pixel-color').trim();
+  const pixelColor = getComputedStyle(document.documentElement).getPropertyValue('--pixel-color').trim() || '#943ae4';
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pointer = { x: -10000, y: -10000, movedAt: -Infinity };
   const camera = { x: 0, y: 0 };

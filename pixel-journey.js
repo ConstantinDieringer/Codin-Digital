@@ -10,7 +10,7 @@
   const slots = [...document.querySelectorAll('.service-slot')];
   if (!canvas || !contact || !icons.length || icons.length !== slots.length) return;
   const ctx = canvas.getContext('2d');
-  const ink = getComputedStyle(document.documentElement).getPropertyValue('--pixel-color').trim();
+  const ink = getComputedStyle(document.documentElement).getPropertyValue('--pixel-color').trim() || '#943ae4';
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mobileDevice = matchMedia('(max-width: 700px)');
   const phoneRows = ['00011111000','00100000100','00101110100','00100000100','00100000100','00100000100','00100000100','00100000100','00100100100','00011111000','00000000000'];
