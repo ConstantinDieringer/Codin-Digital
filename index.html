@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <script src="services.js" defer></script>
+  <script src="web-build.js" defer></script>
+  <script src="tech-build.js" defer></script>
   <script src="ambient-flow.js" defer></script>
   <script src="pixel-journey.js" defer></script>
   <script src="portfolio-pixel-marks.js" defer></script>
@@ -56,40 +58,44 @@
   <section class="services" id="services" aria-labelledby="services-title">
     <div class="services-stage">
       <div class="services-atmosphere" aria-hidden="true"><canvas class="fluid-background"></canvas></div>
-      <header class="services-heading" id="webdesign">
-        <h2 id="services-title">Webdesign.<br><span>Mit Charakter.</span></h2>
-        <p class="services-intro">Du hast etwas zu zeigen.<br>Geben wir ihm den richtigen Auftritt.</p>
-        <p class="services-description">Von der ersten Idee bis zur fertigen Website: durchdachtes Design, klare Inhalte und eine Entwicklung, die auf jedem Bildschirm funktioniert.</p>
-        <div class="services-actions">
-          <a class="services-primary" href="#contact" data-contact-service="Webdesign">Deine Website besprechen <span aria-hidden="true">↗</span></a>
-          <a class="services-secondary" href="#portfolio">Arbeiten entdecken <span aria-hidden="true">↓</span></a>
-        </div>
+      <header class="services-heading">
+        <p class="section-label">SERVICES</p>
+        <h2 id="services-title">Zwei Disziplinen.<br><span>Ein Ansprechpartner.</span></h2>
+        <p class="services-description">Ob neuer Auftritt oder individuelle Software: Du bekommst Gestaltung und Technik aus einer Hand – von der ersten Idee bis zum laufenden Betrieb.</p>
       </header>
-      <div class="services-showcase">
-        <div class="preview-toolbar">
-          <div class="preview-switch" role="group" aria-label="Website-Vorschau auswählen">
-            <button type="button" data-preview-mode="desktop" aria-pressed="true" aria-controls="design-preview">Desktop</button>
-            <button type="button" data-preview-mode="mobile" aria-pressed="false" aria-controls="design-preview">Mobile</button>
-          </div>
-        </div>
-        <div class="service-slot service-slot-main">
+      <div class="services-stack">
+        <article class="service-slot service-web" id="webdesign" aria-labelledby="service-web-title">
           <div class="service-tile">
             <div class="service-pixel-icon service-pixel-icon-main" aria-hidden="true"></div>
-            <div class="tile-content">
-              <div class="design-browser" id="design-preview" data-mode="desktop" role="img" aria-label="Illustrative Website-Vorschau im Desktop-Format">
-                <div class="design-chrome" aria-hidden="true"><span><i></i><i></i><i></i></span><span>Deine Idee. Dein Auftritt.</span></div>
-                <div class="studio-page" aria-hidden="true">
-                  <div class="studio-nav"><strong>atelier<span>®</span></strong><span>Spaces with a point of view <b>↗</b></span></div>
-                  <div class="studio-body">
-                    <div class="studio-copy"><span>ARCHITECTURE & LIVING</span><strong>Room for<br><em>new ideas.</em></strong><span class="studio-cta">Explore spaces <b>↗</b></span></div>
-                    <div class="studio-visual"><img src="assets/services-space.webp" alt="" width="1122" height="1402" loading="lazy"><span>01 / A different perspective</span></div>
-                  </div>
-                  <div class="studio-footer"><span>Thoughtfully designed. Naturally different.</span><span>Discover the collection ↗</span></div>
-                </div>
+            <div class="service-card">
+              <div class="service-copy">
+                <p class="service-index"><span>01</span>WEBDESIGN</p>
+                <h3 id="service-web-title">Websites, die<br>Eindruck hinterlassen.</h3>
+                <p class="service-text">Ein Auftritt, der nach dir aussieht und aus Besuchern Anfragen macht – gestaltet, entwickelt und betreut aus einer Hand.</p>
+              </div>
+              <div class="service-art" aria-hidden="true">
+                <div class="build" data-build></div>
+                <p class="service-scope">Design · Entwicklung · SEO · Hosting</p>
               </div>
             </div>
           </div>
-        </div>
+        </article>
+        <article class="service-slot service-tech" id="technical-solutions" aria-labelledby="service-tech-title">
+          <div class="service-tile">
+            <div class="service-pixel-icon" aria-hidden="true"></div>
+            <div class="service-card">
+              <div class="service-copy">
+                <p class="service-index"><span>02</span>TECHNICAL SOLUTIONS</p>
+                <h3 id="service-tech-title">Software, die zu<br>deinem Business passt.</h3>
+                <p class="service-text">Wo Standard-Tools aufhören, fange ich an: individuelle Anwendungen, Automatisierungen und KI-Workflows, gebaut für deinen konkreten Use Case.</p>
+              </div>
+              <div class="service-art" aria-hidden="true">
+                <div class="build" data-tech-build></div>
+                <p class="service-scope">Automatisierung · Tools · Schnittstellen · KI</p>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>

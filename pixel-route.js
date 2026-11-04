@@ -2,7 +2,7 @@
   'use strict';
   const canvas = document.querySelector('.pixel-route');
   const service = document.querySelector('.services');
-  const icon = document.querySelector('.service-pixel-icon');
+  const icons = [...document.querySelectorAll('.service-pixel-icon')];
   const portfolioSection = document.querySelector('#portfolio');
   const aboutSection = document.querySelector('#ueber-mich');
   const timelineSection = document.querySelector('#ablauf');
@@ -11,7 +11,7 @@
   const linkedIn = document.querySelector('.about-linkedin');
   const marks = [...document.querySelectorAll('[data-pixel-mark]')];
   const patterns = window.CODIN_PORTFOLIO_MARKS;
-  if (!canvas || !service || !icon || !linkedIn || !portfolioSection || !aboutSection || marks.length !== 3 || !patterns) return;
+  if (!canvas || !service || !icons.length || !linkedIn || !portfolioSection || !aboutSection || marks.length !== 3 || !patterns) return;
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -71,7 +71,7 @@
   }
 
   function originPoints() {
-    const pixels = [...icon.children].map(pixel => pixel.getBoundingClientRect());
+    const pixels = icons.flatMap(icon => [...icon.children]).map(pixel => pixel.getBoundingClientRect());
     if (!pixels.length) return [];
     // Subdivide the existing squares: the cloud continues without new particles popping in.
     const subdivisions = Math.ceil(Math.sqrt(Math.ceil(count / pixels.length)));
@@ -221,7 +221,7 @@
     const ready = !motion.matches && document.body.classList.contains('pixel-journey-done') && service.classList.contains('is-expanded');
     document.body.classList.toggle('pixel-route-ready', ready);
     if (!ready) { service.classList.remove('route-departed'); document.body.classList.remove('linkedin-formed'); document.body.classList.remove('portfolio-formed'); document.body.classList.remove('timeline-formed'); stage = 'services'; flight = null; updateTimeline(now); return; }
-    if (!icon.children.length || !linkedinPattern?.points.length) return;
+    if (!icons.some(icon => icon.children.length) || !linkedinPattern?.points.length) return;
     let destination = pointsFor(stage);
     let current = flight ? interpolate(flight.from, destination, now - flight.started) : destination;
     const wanted = requestedStage();

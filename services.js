@@ -6,6 +6,14 @@
   const slots = [...document.querySelectorAll('.service-slot')];
   const tiles = [...document.querySelectorAll('.service-tile')];
   if (!section || !slots.length || slots.length !== tiles.length) return;
+  // The cards stay in the layout; a glass stand-in per card performs the flight.
+  const ghosts = slots.map(slot => {
+    const ghost = document.createElement('div');
+    ghost.className = 'service-tile-ghost';
+    ghost.setAttribute('aria-hidden', 'true');
+    slot.append(ghost);
+    return ghost;
+  });
 
   if (typeof IntersectionObserver !== 'undefined') {
     const visibility = new IntersectionObserver(entries => {
@@ -48,29 +56,27 @@
       y: mix(seed.y, target.top + target.height / 2, travel) - mix(size, target.height, grow) / 2,
       width: mix(size, target.width, grow), height: mix(size, target.height, grow),
       radius: mix(0, viewportWidth <= 700 ? 24 : 30, grow),
-      glass: ease(grow, .02, .72), content: ease(grow, .58, .95),
+      glass: ease(grow, .02, .72),
       opacity: mix(seed.alpha, 1, ease(progress, 0, .3))
     };
   }
 
   function setTile(index, state) {
-    const tile = tiles[index];
-    tile.style.width = `${state.width}px`;
-    tile.style.height = `${state.height}px`;
-    tile.style.transform = `translate3d(${state.x}px, ${state.y}px, 0)`;
-    tile.style.borderRadius = `${state.radius}px`;
-    tile.style.opacity = state.opacity;
-    tile.style.setProperty('--glass', state.glass);
-    tile.style.setProperty('--content', state.content);
-    tile.setAttribute('aria-hidden', state.content < .7 ? 'true' : 'false');
-    tile.inert = state.content < .7;
+    const ghost = ghosts[index];
+    ghost.style.width = `${state.width}px`;
+    ghost.style.height = `${state.height}px`;
+    ghost.style.transform = `translate3d(${state.x}px, ${state.y}px, 0)`;
+    ghost.style.borderRadius = `${state.radius}px`;
+    ghost.style.opacity = state.opacity;
+    ghost.style.setProperty('--glass', state.glass);
   }
 
   function finish() {
     mode = 'expanded';
     section.classList.add('is-expanded');
     section.style.setProperty('--scene-content', 1);
-    tiles.forEach(tile => { tile.removeAttribute('style'); tile.removeAttribute('aria-hidden'); tile.inert = false; });
+    ghosts.forEach(ghost => ghost.removeAttribute('style'));
+    tiles.forEach(tile => { tile.removeAttribute('aria-hidden'); tile.inert = false; });
   }
 
   function reset() {
@@ -78,7 +84,8 @@
     seeds = null;
     section.classList.remove('is-expanded');
     section.style.setProperty('--scene-content', 0);
-    tiles.forEach(tile => { tile.removeAttribute('style'); tile.setAttribute('aria-hidden', 'true'); tile.inert = true; });
+    ghosts.forEach(ghost => ghost.removeAttribute('style'));
+    tiles.forEach(tile => { tile.setAttribute('aria-hidden', 'true'); tile.inert = true; });
     document.dispatchEvent(new CustomEvent('codin:return-seeds'));
   }
 
@@ -101,6 +108,22 @@
   }
 
   function queue() { if (!frameId) frameId = requestAnimationFrame(render); }
+
+  // Sticky cards: a card steps back slightly while the next one slides over it.
+  let stackFrame = 0;
+  function updateStack() {
+    stackFrame = 0;
+    tiles.forEach((tile, index) => {
+      const next = slots[index + 1];
+      const sticky = next && getComputedStyle(slots[index]).position === 'sticky';
+      const box = slots[index].getBoundingClientRect();
+      const covered = sticky ? Math.max(0, Math.min(1, (box.bottom - next.getBoundingClientRect().top) / box.height)) : 0;
+      tile.style.setProperty('--covered', covered.toFixed(3));
+    });
+  }
+  const queueStack = () => { if (!stackFrame) stackFrame = requestAnimationFrame(updateStack); };
+  addEventListener('scroll', queueStack, { passive: true });
+  addEventListener('resize', queueStack);
   addEventListener('scroll', queue, { passive: true });
   addEventListener('resize', () => { measure(); queue(); });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) queue(); });
