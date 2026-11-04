@@ -35,6 +35,12 @@
     timelineSurface.setAttribute('aria-hidden', 'true');
     timelineLayout.append(timelineSurface);
   }
+  // Like the portfolio marks, the settled button is painted inside the link so it scrolls natively.
+  const linkedInSurface = document.createElement('canvas');
+  let linkedInPaintKey = '';
+  linkedInSurface.className = 'linkedin-pixel-canvas';
+  linkedInSurface.setAttribute('aria-hidden', 'true');
+  linkedIn.append(linkedInSurface);
   const count = groups.reduce((total, group) => total + group.pattern.points.length, 0);
   let frame = 0, linkedinPattern = null;
   let stage = 'services', flight = null, timelineStarted = null;
@@ -147,6 +153,24 @@
     }
   }
 
+  function paintAnchoredLinkedIn() {
+    const box = linkedIn.getBoundingClientRect();
+    const ratio = Math.min(devicePixelRatio || 1, 2);
+    const key = `${box.width}:${box.height}:${ratio}`;
+    if (linkedInPaintKey === key || !box.width || !box.height) return;
+    linkedInPaintKey = key;
+    linkedInSurface.width = Math.round(box.width * ratio);
+    linkedInSurface.height = Math.round(box.height * ratio);
+    const brush = linkedInSurface.getContext('2d');
+    brush.setTransform(ratio, 0, 0, ratio, 0, 0);
+    brush.clearRect(0, 0, box.width, box.height);
+    brush.fillStyle = ink;
+    for (const point of pointsFor('linkedin')) {
+      const x = point.x - box.left, y = point.y - box.top - scrollY;
+      brush.fillRect(x - point.size / 2, y - point.size / 2, point.size, point.size);
+    }
+  }
+
   function paintAnchoredTimeline(active) {
     const box = timelineLayout.getBoundingClientRect();
     const ratio = Math.min(devicePixelRatio || 1, 2);
@@ -218,10 +242,12 @@
     const anchoredTimeline = Boolean(timelineSurface) && stage === 'timeline' && !flight;
     document.body.classList.toggle('timeline-formed', anchoredTimeline);
     if (anchoredTimeline) paintAnchoredTimeline(timeline.active);
-    document.body.classList.toggle('linkedin-formed', stage === 'linkedin' && !flight);
+    const anchoredLinkedIn = stage === 'linkedin' && !flight;
+    document.body.classList.toggle('linkedin-formed', anchoredLinkedIn);
+    if (anchoredLinkedIn) paintAnchoredLinkedIn();
     const departed = stage !== 'services' || Boolean(flight);
     service.classList.toggle('route-departed', departed);
-    if (departed && !anchored && !anchoredTimeline) {
+    if (departed && !anchored && !anchoredTimeline && !anchoredLinkedIn) {
       ctx.fillStyle = ink;
       for (const point of current) {
         const y = point.y - scrollY;
@@ -240,6 +266,7 @@
     canvas.width = Math.round(innerWidth * dpr); canvas.height = Math.round(innerHeight * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     linkedinPattern = makeLinkedInPattern();
+    linkedInPaintKey = '';
     queue();
   }
   addEventListener('scroll', queue, { passive: true });

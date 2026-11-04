@@ -429,6 +429,9 @@ html[lang="en"] .language-switch { --indicator-x: 34px; }
 .about-linkedin { font-weight: 600; gap: 24px; padding-inline: 18px; transition: box-shadow .25s, background .25s; }
 .pixel-route-ready.linkedin-formed .about-linkedin { z-index: 13; color: #fff; background: transparent; box-shadow: inset 0 1px 0 #ffffff50, 0 4px 14px #9133cc14; }
 .pixel-route-ready.linkedin-formed .about-linkedin > span { visibility: visible; font-size: 20px; }
+.linkedin-pixel-canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+.about-linkedin > .linkedin-pixel-canvas { visibility: hidden; }
+.pixel-route-ready.linkedin-formed .about-linkedin > .linkedin-pixel-canvas { visibility: visible; }
 .pixel-route-ready.linkedin-formed .about-linkedin:hover { color: #fff; background: #ffffff14; box-shadow: inset 0 1px 0 #ffffff70, 0 6px 20px #9133cc2b; }
 @media (prefers-reduced-motion: reduce) { .about-linkedin, .nav-toggle { transition: none; } }
 
