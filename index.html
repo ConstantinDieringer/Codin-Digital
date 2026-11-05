@@ -14,6 +14,7 @@
   <script src="services.js" defer></script>
   <script src="web-build.js" defer></script>
   <script src="tech-build.js" defer></script>
+  <script src="skill-deck.js" defer></script>
   <script src="ambient-flow.js" defer></script>
   <script src="pixel-journey.js" defer></script>
   <script src="portfolio-pixel-marks.js" defer></script>
@@ -75,7 +76,6 @@
               </div>
               <div class="service-art" aria-hidden="true">
                 <div class="build" data-build></div>
-                <p class="service-scope">Design · Entwicklung · SEO · Hosting</p>
               </div>
             </div>
           </div>
@@ -91,7 +91,6 @@
               </div>
               <div class="service-art" aria-hidden="true">
                 <div class="build" data-tech-build></div>
-                <p class="service-scope">Automatisierung · Tools · Schnittstellen · KI</p>
               </div>
             </div>
           </div>
@@ -169,12 +168,20 @@
         </figure>
       </div>
       <div class="about-expertise" aria-labelledby="expertise-title">
-        <h3 id="expertise-title">Meine Expertise<span>.</span></h3>
-        <ol class="expertise-list">
-          <li><span class="expertise-number" aria-hidden="true">01</span><div><h4>Webdesign</h4><p>Auftritte mit Charakter gestalten.</p></div></li>
-          <li><span class="expertise-number" aria-hidden="true">02</span><div><h4>AI Automation Engineering</h4><p>Abläufe intelligent verbinden.</p></div></li>
-          <li><span class="expertise-number" aria-hidden="true">03</span><div><h4>Forward Deployment Engineering</h4><p>Ideen in funktionierende Lösungen übersetzen.</p></div></li>
-        </ol>
+        <p class="section-label">PROFIL</p>
+        <h3 id="expertise-title">Design, Daten<br><span>und Code.</span></h3>
+        <p class="about-bio">Ich habe Business Informatics mit Schwerpunkt Data Science studiert und in zwei Tech-Startups gearbeitet – zuletzt als Engineer bei einem der am schnellsten wachsenden Startups Deutschlands.</p>
+        <div class="skill-deck" role="group" aria-roledescription="Kartenstapel" aria-label="Meine Fähigkeiten">
+          <span class="skill-glow skill-glow-a" aria-hidden="true"></span><span class="skill-glow skill-glow-b" aria-hidden="true"></span>
+          <div class="skill-stack" tabindex="0">
+            <article class="skill-card" data-skill="0" aria-labelledby="skill-0"><span class="skill-number" aria-hidden="true">01</span><h4 id="skill-0">Webdesign</h4><p>Ich gestalte und entwickle Websites, die nach dir aussehen – mit klarer Struktur, eigener Bildsprache und sauberem Code für jeden Bildschirm.</p></article>
+            <article class="skill-card" data-skill="1" aria-labelledby="skill-1"><span class="skill-number" aria-hidden="true">02</span><h4 id="skill-1">AI Automation Engineering</h4><p>Ich baue Automatisierungen, die wiederkehrende Aufgaben übernehmen und jede Woche Zeit sparen – von der Datenerfassung bis zum fertigen Report.</p></article>
+            <article class="skill-card" data-skill="2" aria-labelledby="skill-2"><span class="skill-number" aria-hidden="true">03</span><h4 id="skill-2">Forward Deployment Engineering</h4><p>Ich entwickle Features direkt mit Kunden – vom ersten Prototyp für die Demo bis zur stabilen Lösung in der Produktionsumgebung.</p></article>
+            <article class="skill-card" data-skill="3" aria-labelledby="skill-3"><span class="skill-number" aria-hidden="true">04</span><h4 id="skill-3">Data Science</h4><p>In mehreren Machine-Learning-Projekten habe ich Modelle für ganz unterschiedliche Use Cases trainiert, getestet und Schritt für Schritt verbessert.</p></article>
+          </div>
+          <span class="skill-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <p class="skill-status" role="status"></p>
+        </div>
         <div class="about-links">
           <a class="about-contact-link" href="#contact">Lernen wir uns kennen <span aria-hidden="true">↗</span></a>
           <a class="about-linkedin" href="https://at.linkedin.com/in/constantin-dieringer" target="_blank" rel="noopener noreferrer" aria-label="Constantin Dieringer auf LinkedIn – öffnet in einem neuen Tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3.3 9h3.4v12H3.3V9Zm6.1 0h3.3v1.6c.7-1.2 1.8-1.9 3.5-1.9 3.4 0 4.5 2.1 4.5 5.2V21h-3.5v-6.3c0-1.6-.3-2.9-2.1-2.9-1.9 0-2.3 1.5-2.3 3V21H9.4V9Z"/></svg>LinkedIn <span aria-hidden="true">↗</span></a>
