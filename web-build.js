@@ -7,10 +7,10 @@
   const copy = {
     // The page being built belongs to an invented guided-hiking company on the coast.
     de: { line1: 'Die Küste', line2: 'ruft.', button: 'Tour buchen',
-      text: 'Geführte Wandertouren entlang der Küste – für Einsteiger und Gipfelstürmer.',
+      text: 'Geführte Wandertouren entlang der Küste, für Einsteiger und Gipfelstürmer.',
       cards: ['Küstenpfad · 12 km', 'Wiesenrunde · 8 km', 'Gipfeltour · 15 km'], toast: 'Live · kuestenwege.de' },
     en: { line1: 'The coast', line2: 'is calling.', button: 'Book a tour',
-      text: 'Guided hikes along the coast – for beginners and summit seekers.',
+      text: 'Guided hikes along the coast for beginners and summit seekers.',
       cards: ['Coastal trail · 12 km', 'Meadow loop · 8 km', 'Summit tour · 15 km'], toast: 'Live · coastal-trails.com' }
   };
 

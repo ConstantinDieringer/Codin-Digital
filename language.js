@@ -13,22 +13,22 @@
     'Livegang & Hosting': 'Go-live & hosting',
     'Wir lernen uns kennen und klären, was deine Website zeigen und erreichen soll.': 'We get to know each other and define what your website should communicate and achieve.',
     'Du bekommst einen ersten Entwurf, der deine Idee in Form, Farbe und Struktur übersetzt.': 'You receive a first draft that translates your idea into layout, colour and structure.',
-    '2–3 Feedbackrunden': '2–3 review sessions',
+    '2 bis 3 Feedbackrunden': '2 to 3 review sessions',
     'Wir gehen die Website gemeinsam durch und verfeinern Design, Inhalte und Details.': 'We review the website together and refine the design, content and details.',
     'Wir prüfen den fertigen Auftritt, richten das Hosting ein und bringen deine Website online.': 'We check the finished website, set up hosting and bring your site online.',
     'Website-Konzept': 'Website concept',
-    'Ich habe Business Informatics mit Schwerpunkt Data Science studiert und in zwei Tech-Startups gearbeitet – zuletzt als Engineer bei einem der am schnellsten wachsenden Startups Deutschlands.': 'I studied Business Informatics with a focus on Data Science and have worked at two tech startups — most recently as an engineer at one of Germany’s fastest-growing startups.',
+    'Ich habe Business Informatics mit Schwerpunkt Data Science studiert und in zwei Tech-Startups gearbeitet, zuletzt als Engineer bei einem der am schnellsten wachsenden Startups Deutschlands.': 'I studied Business Informatics with a focus on Data Science and have worked at two tech startups, most recently as an engineer at one of Germany’s fastest-growing startups.',
     'Am Webdesign begeistert mich, Ideen sichtbar zu machen. Ich möchte Selbstständigen und Unternehmen helfen, ihre Arbeit klar zu zeigen und mit einem eigenen Auftritt die richtigen Menschen zu erreichen.': 'What I love about web design is making ideas tangible. I want to help independent professionals and businesses present their work clearly and reach the right people with a website of their own.',
     'Über mich': 'About me',
     'Kontakt': 'Contact',
     'Menü': 'Menu',
-    'Zwei Disziplinen.': 'Two disciplines.',
-    'Ein Ansprechpartner.': 'One point of contact.',
-    'Ob neuer Auftritt oder individuelle Software: Du bekommst Gestaltung und Technik aus einer Hand – von der ersten Idee bis zum laufenden Betrieb.': 'Whether it’s a new website or custom software: you get design and engineering from one person – from the first idea to day-to-day operation.',
+    'Deine Idee.': 'Your idea.',
+    'Startklar.': 'Ready to launch.',
+    'Ob neuer Auftritt oder individuelle Software: Du bekommst eine Lösung, die genau zu deinem Business passt.': 'Whether it’s a new website or custom software: you get a solution that fits your business exactly.',
     'WEBDESIGN': 'WEB DESIGN',
     'Websites, die': 'Websites that',
     'Eindruck hinterlassen.': 'leave an impression.',
-    'Ein Auftritt, der nach dir aussieht und aus Besuchern Anfragen macht – gestaltet, entwickelt und betreut aus einer Hand.': 'A website that looks like you and turns visitors into enquiries – designed, built and looked after by one person.',
+    'Ein Auftritt, der nach dir aussieht und aus Besuchern Anfragen macht. Gestaltet, entwickelt und betreut aus einer Hand.': 'A website that looks like you and turns visitors into enquiries. Designed, built and looked after by one person.',
     'Software, die zu': 'Software built',
     'deinem Business passt.': 'around your business.',
     'Wo Standard-Tools aufhören, fange ich an: individuelle Anwendungen, Automatisierungen und KI-Workflows, gebaut für deinen konkreten Use Case.': 'Where off-the-shelf tools stop, I start: custom applications, automations and AI workflows built for your specific use case.',
@@ -54,9 +54,9 @@
     'und Code.': 'and code.',
     'Meine Fähigkeiten': 'My skills',
     'Kartenstapel': 'card stack',
-    'Ich gestalte und entwickle Websites, die nach dir aussehen – mit klarer Struktur, eigener Bildsprache und sauberem Code für jeden Bildschirm.': 'I design and build websites that look like you – with a clear structure, their own visual language and clean code for every screen.',
-    'Ich baue Automatisierungen, die wiederkehrende Aufgaben übernehmen und jede Woche Zeit sparen – von der Datenerfassung bis zum fertigen Report.': 'I build automations that take over recurring tasks and save time every week – from capturing data to the finished report.',
-    'Ich entwickle Features direkt mit Kunden – vom ersten Prototyp für die Demo bis zur stabilen Lösung in der Produktionsumgebung.': 'I develop features directly with customers – from the first prototype for the demo to a stable solution in the production environment.',
+    'Ich gestalte und entwickle Websites, die nach dir aussehen: mit klarer Struktur, eigener Bildsprache und sauberem Code für jeden Bildschirm.': 'I design and build websites that look like you: with a clear structure, their own visual language and clean code for every screen.',
+    'Ich baue Automatisierungen, die wiederkehrende Aufgaben übernehmen und jede Woche Zeit sparen, von der Datenerfassung bis zum fertigen Report.': 'I build automations that take over recurring tasks and save time every week, from capturing data to the finished report.',
+    'Ich entwickle Features direkt mit Kunden, vom ersten Prototyp für die Demo bis zur stabilen Lösung in der Produktionsumgebung.': 'I develop features directly with customers, from the first prototype for the demo to a stable solution in the production environment.',
     'In mehreren Machine-Learning-Projekten habe ich Modelle für ganz unterschiedliche Use Cases trainiert, getestet und Schritt für Schritt verbessert.': 'In several machine learning projects I trained, tested and steadily improved models for a wide range of use cases.',
     'Lernen wir uns kennen': 'Let’s get to know each other',
     'DEINE IDEE. UNSER NÄCHSTES PROJEKT.': 'YOUR IDEA. OUR NEXT PROJECT.',
@@ -70,15 +70,15 @@
     'Dein Nachname': 'Your last name',
     'du@unternehmen.de': 'you@company.com',
     'Was möchtest du verändern oder aufbauen?': 'What would you like to change or build?',
-    'Codin Digital — zurück zum Anfang': 'Codin Digital — back to the top',
+    'Codin Digital, zurück zum Anfang': 'Codin Digital, back to the top',
     'Hauptnavigation': 'Main navigation',
     'Sprache auswählen': 'Choose language',
     'Nach unten scrollen': 'Scroll down',
-    'Runa Advisors – Website in neuem Tab öffnen': 'Runa Advisors — open website in a new tab',
-    'Thugatra – Website in neuem Tab öffnen': 'Thugatra — open website in a new tab',
-    'You could be next – dein Projekt besprechen': 'You could be next — discuss your project',
+    'Runa Advisors: Website in neuem Tab öffnen': 'Runa Advisors: open website in a new tab',
+    'Thugatra: Website in neuem Tab öffnen': 'Thugatra: open website in a new tab',
+    'You could be next: dein Projekt besprechen': 'You could be next: discuss your project',
     'Porträt von Constantin, dem Kopf hinter Codin-Digital': 'Portrait of Constantin, the person behind Codin-Digital',
-    'Constantin Dieringer auf LinkedIn – öffnet in einem neuen Tab': 'Constantin Dieringer on LinkedIn — opens in a new tab',
+    'Constantin Dieringer auf LinkedIn, öffnet in einem neuen Tab': 'Constantin Dieringer on LinkedIn, opens in a new tab',
     'Projektanfrage': 'Project enquiry'
   };
   // Keep references to text nodes so switching language preserves icons and markup.
@@ -107,8 +107,8 @@
     for (const record of attributes) record.element.setAttribute(record.name, language === 'de' ? record.original : translations[record.original]);
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
     document.querySelector('meta[name="description"]').setAttribute('content', language === 'en'
-      ? 'Codin-Digital — individual web design and development. Thoughtful websites with personality, since 2026.'
-      : 'Codin-Digital — individuelles Webdesign und Entwicklung. Durchdachte Websites mit Persönlichkeit, seit 2026.');
+      ? 'Codin-Digital: individual web design and custom software that fits your business.'
+      : 'Codin-Digital: individuelles Webdesign und Software, passend zu deinem Business.');
     document.dispatchEvent(new CustomEvent('codin:language-change', { detail: { language } }));
     try { localStorage.setItem('codin-language', language); } catch { /* Storage may be unavailable for local files. */ }
   }
